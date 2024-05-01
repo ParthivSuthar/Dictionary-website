@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #081460;
+    --padding:20px;
+    --text-color: #d5c7e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #d4e2e1;
+    width: 100vw;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: var(--padding);
+    color: var(--text-color);
+}
+
+header h1{
+    font-size: 36px;
+}
+
+main {
+    min-height: 78vh;
+    padding: var(--padding);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main form {
+    display: flex;
+    justify-content: center;
+}
+
+form input {
+    flex-grow: 1;
+}
+
+form input, button, .result div a{
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: calc(var(--padding)/2);
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.result {
+    background-color: #fff;
+    padding: var(--padding);
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.result p {
+    margin-top: 10px;
+}
+
+.result p[class="partofspeech"]{
+    font-style: italic;
+    color: #504d4d;
+    margin-top: 2px;
+}
+
+.result div{
+    margin-top: 20px;
+}
+
+.result div a{
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.result li {
+    padding: calc(var(--padding)/6);
+    margin-left: 20px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: var(--padding);
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 320px) {
+    main form {
+        flex-direction: column;
+    }
+
+    form button {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+
+
