@@ -10,7 +10,7 @@ form.addEventListener("submit", function (e) {
 
 const getWordInfo = async function (word) {
   try {
-    result.innerHTML = "Fetching data....."
+    result.innerHTML = "Fetching data.....";
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     );
@@ -35,29 +35,9 @@ const getWordInfo = async function (word) {
                 <ul class="synonyms"></ul>
                 `;
 
-    // // Fetching Antonyms
-
-    // if (definitions.antonyms.length === 0) {
-    //   result.innerHTML += `<span>Not Found</span>`;
-    // } else {
-    //   for (let i = 0; i < definitions.antonyms.length; i++) {
-    //     result.innerHTML += `<li>${definitions.antonyms[i]}</li>`;
-    //   }
-    // }
-
-    // //Fetching Synonyms
-
-    // if(definitions.synonyms.length === 0){
-    //     result.innerHTML += `<span>Not Found</span>`;
-    // } else {
-    //     for(let i = 0; i < definitions.synonyms.length; i++){
-    //         result.innerHTML += `<li>${definitions.synonyms[i]}</li>`
-    //     }
-    // }
-
     // Fetching Antonyms
     const antonyms = definitions.antonyms;
-    const antonymsList = result.querySelector('.antonyms');
+    const antonymsList = result.querySelector(".antonyms");
     if (!antonyms || antonyms.length === 0) {
       antonymsList.innerHTML += `<li>Not Found</li>`;
     } else {
@@ -68,7 +48,7 @@ const getWordInfo = async function (word) {
 
     // Fetching Synonyms
     const synonyms = definitions.synonyms;
-    const synonymsList = result.querySelector('.synonyms');
+    const synonymsList = result.querySelector(".synonyms");
     if (!synonyms || synonyms.length === 0) {
       synonymsList.innerHTML += `<li>Not Found</li>`;
     } else {
@@ -77,12 +57,11 @@ const getWordInfo = async function (word) {
       }
     }
 
-
     // Adding audio
 
-    let listenAudio = new Audio()
-    listenAudio.src = data[0].phonetics[2].audio
-    listenAudio.play()
+    let listenAudio = new Audio();
+    listenAudio.src = data[0].phonetics[2].audio;
+    listenAudio.play();
 
     // Adding Read More link
 
@@ -90,5 +69,4 @@ const getWordInfo = async function (word) {
   } catch (error) {
     result.innerHTML = `<p>Sorry, the word could not be found</p>`;
   }
-
 };
